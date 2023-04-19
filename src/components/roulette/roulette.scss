@@ -1,0 +1,75 @@
+$wave: '../../assets/wave.png';
+
+.rouletteInner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.inputPrizeInner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.rouletteBtn {
+  padding: 15px 30px;
+  color: #00aeff;
+  font-size: 18px;
+  letter-spacing: 3px;
+  border: 2px solid #00aeff;
+  text-transform: uppercase;
+  position: relative;
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.5s;
+  margin-top: 30px;
+  z-index: 1;
+  &:hover {
+    .wave {
+      top: 0;
+    }
+  }
+}
+
+.rouletteBtn:hover {
+  color: #fff;
+}
+
+.wave {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: calc(100% + 22px);
+  background-color: #00aeff;
+  transition: all 1s;
+  z-index: -1;
+  &:before {
+    content: '';
+    position: absolute;
+    top: -22px;
+    left: 0;
+    width: 100%;
+    height: 22px;
+    background: url('#{$wave}');
+    animation: wavy 0.8s linear infinite;
+  }
+}
+
+@keyframes wavy {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 118px;
+  }
+}
+
+// .bhdLno {
+//   max-width: 900px !important;
+//   max-height: 900px !important;
+// }
