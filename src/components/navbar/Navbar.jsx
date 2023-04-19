@@ -11,10 +11,18 @@ const Navbar = () => {
           <span className="logoText">PoooshkA</span>
         </div>
         <div className="navbarSocial">
-          <a className="telegramLink" href="#">
+          <a
+            className="telegramLink"
+            href="https://t.me/marusyalook"
+            target="_blank"
+          >
             <img src={telegram} alt="telegram" />
           </a>
-          <a className="instagramLink" href="#">
+          <a
+            className="instagramLink"
+            href="https://instagram.com/poooshka?igshid=ZWIzMWE5ZmU3Zg=="
+            target="_blank"
+          >
             <img src={instagram} alt="instagram" />
           </a>
         </div>
