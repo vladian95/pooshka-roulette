@@ -1,0 +1,107 @@
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.wrapperIcon {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.icon {
+  position: relative;
+  background: transparent;
+  border-radius: 50%;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #0088cc;
+  color: #ffffff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.tooltip::before {
+  position: absolute;
+  content: '';
+  height: 8px;
+  width: 8px;
+  background: #0088cc;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapperIcon .telegram:hover,
+.wrapperIcon .mail:hover,
+.wrapperIcon .instagram:hover,
+.wrapperIcon .github:hover,
+.wrapperIcon .linkedin:hover {
+  transform: scale(1.2);
+}
+.wrapperIcon .telegram:hover .tooltip,
+.wrapperIcon .telegram:hover .tooltip::before {
+  background: #0088cc;
+  color: #ffffff;
+}
+.wrapperIcon .mail:hover .tooltip,
+.wrapperIcon .mail:hover .tooltip::before {
+  background: #db4a39;
+  color: #ffffff;
+}
+.wrapperIcon .github:hover .tooltip,
+.wrapperIcon .github:hover .tooltip::before {
+  background: #28a745;
+  color: #ffffff;
+}
+.wrapperIcon .linkedin:hover .tooltip,
+.wrapperIcon .linkedin:hover .tooltip::before {
+  background: #0a66c2;
+  color: #ffffff;
+}
+
+.footerText {
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.vldn95 {
+  font-family: 'Sedgwick Ave Display', cursive;
+  font-size: 40px;
+}
