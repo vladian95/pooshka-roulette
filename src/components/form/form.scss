@@ -1,7 +1,32 @@
 .formInner {
-  margin-top: 300px;
+  margin-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.inputPrizeInner {
+  color: #fff;
+  margin-bottom: 100px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.inputPrizeTitle {
+  font-size: 40px;
+}
+
+.inputPrize {
+  font-size: 50px;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  outline: none;
 }

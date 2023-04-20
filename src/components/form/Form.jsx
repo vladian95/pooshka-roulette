@@ -57,14 +57,23 @@ const Form = ({ selectedPrize }) => {
       <div className="formInner">
         <form onSubmit={handleSubmit}>
           <div className="inputPrizeInner">
-            <label htmlFor="prize">Ваш выигрыш</label>
-            <RoulettePrizeInput value={selectedPrize} onChange={() => {}} />
+            <label className="inputPrizeTitle" htmlFor="prize">
+              ВАШ ВЫИГРЫШ:
+            </label>
+            <RoulettePrizeInput
+              className="inputPrize"
+              value={selectedPrize}
+              onChange={() => {}}
+            />
           </div>
-          <div>
-            <label htmlFor="name">Имя</label>
+          <div className="inputBox">
+            <label className="inputLabel" htmlFor="name">
+              Имя
+            </label>
             <input
               type="text"
               id="name"
+              className="inputInfo"
               value={name}
               onChange={handleNameChange}
             />
@@ -88,20 +97,21 @@ const Form = ({ selectedPrize }) => {
             style={{
               overlay: {
                 zIndex: 10,
+                backgroundColor: 'transparent',
               },
               content: {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
                 alignItems: 'center',
-                backgroundColor: 'red',
-                //   zIndex: 9999,
+                backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                backdropFilter: 'blur(10px)',
               },
             }}
           >
             <h2>Спасибо за участие в розыгрыше!</h2>
             <p>Ваша заявка успешно отправлена.</p>
-            <button onClick={closeModal}>Закрыть</button>
+            <button onClick={closeModal}>X</button>
           </Modal>
         </form>
       </div>

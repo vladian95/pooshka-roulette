@@ -8,7 +8,9 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbarWrapper">
         <div className="logo">
-          <span className="logoText">PoooshkA</span>
+          <span className="logoText">
+            POOOSHK<span className="logoLetter">A</span>
+          </span>
         </div>
         <div className="navbarSocial">
           <a
