@@ -68,3 +68,63 @@ form {
   border-radius: 10px;
   letter-spacing: 0.2em;
 }
+
+.formBtn {
+  width: 160px;
+  height: 60px;
+  margin-top: 20px;
+  color: #fff;
+  background-color: pink;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1.4em;
+  position: relative;
+  transition: all 0.2s;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: pink;
+    transition: all 0.4s;
+    border-radius: 20px;
+    z-index: -1;
+  }
+  &:hover:before {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+  }
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+  }
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
+  }
+}
+
+.successText {
+  color: #fff;
+}
+
+.modalBtn {
+  text-transform: uppercase;
+  background-color: #00aeff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1.4em;
+  border: 2px solid #fff;
+  transition: all 0.5s;
+  font-weight: 300;
+  &:hover {
+    font-weight: 700;
+    letter-spacing: 10px;
+    border: 7px solid #fff;
+  }
+}

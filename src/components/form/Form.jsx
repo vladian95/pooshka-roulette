@@ -89,8 +89,12 @@ const Form = ({ selectedPrize }) => {
             <span className="inputLabel">Ваш email:</span>
           </div>
 
-          <button type="submit">Отправить</button>
-          {success && <p>Сообщение успешно отправлено!</p>}
+          <button className="formBtn" type="submit">
+            <span>О</span>тправить
+          </button>
+          {success && (
+            <h2 className="successText">Информация успешна отправлена!</h2>
+          )}
           <Modal
             isOpen={modalIsOpen}
             onRequestClose={closeModal}
@@ -107,12 +111,16 @@ const Form = ({ selectedPrize }) => {
                 alignItems: 'center',
                 backgroundColor: 'rgba(255, 255, 255, 0.8)',
                 backdropFilter: 'blur(10px)',
+                borderRadius: '20px',
+                color: 'gray',
               },
             }}
           >
             <h2>Спасибо за участие в розыгрыше!</h2>
             <p>Ваша заявка успешно отправлена.</p>
-            <button onClick={closeModal}>X</button>
+            <button className="modalBtn" onClick={closeModal}>
+              Закрыть
+            </button>
           </Modal>
         </form>
       </div>
