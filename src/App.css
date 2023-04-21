@@ -2,3 +2,13 @@ body {
   font-family: 'Lato', sans-serif;
   background-color: #fee440;
 }
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.App {
+  height: 100% !important;
+}

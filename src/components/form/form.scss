@@ -30,3 +30,41 @@ form {
   color: #fff;
   outline: none;
 }
+
+.inputBox {
+  margin-bottom: 15px;
+  position: relative;
+  width: 250px;
+}
+
+.inputFrom {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid pink;
+  border-radius: 10px;
+  outline: none;
+  font-size: 1em;
+  color: pink;
+}
+
+.inputLabel {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 1em;
+  color: pink;
+  transition: all 0.5s;
+}
+
+.inputBox .inputFrom:valid ~ .inputLabel,
+.inputBox .inputFrom:focus ~ .inputLabel {
+  color: #fff;
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.65rem;
+  padding: 2px 10px;
+  background-color: pink;
+  border-radius: 10px;
+  letter-spacing: 0.2em;
+}

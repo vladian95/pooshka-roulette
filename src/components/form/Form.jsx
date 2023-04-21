@@ -67,25 +67,26 @@ const Form = ({ selectedPrize }) => {
             />
           </div>
           <div className="inputBox">
-            <label className="inputLabel" htmlFor="name">
-              Имя
-            </label>
             <input
               type="text"
+              required="required"
               id="name"
-              className="inputInfo"
+              className="inputFrom"
               value={name}
               onChange={handleNameChange}
             />
+            <span className="inputLabel">Ваше имя:</span>
           </div>
-          <div>
-            <label htmlFor="email">Email</label>
+          <div className="inputBox">
             <input
               type="email"
+              required="required"
               id="email"
+              className="inputFrom"
               value={email}
               onChange={handleEmailChange}
             />
+            <span className="inputLabel">Ваш email:</span>
           </div>
 
           <button type="submit">Отправить</button>
