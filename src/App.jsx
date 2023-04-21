@@ -16,8 +16,10 @@ function App() {
     <div className="App">
       <BackgroundAnimation />
       <Navbar />
-      <Roulette onResultChange={handleResultChange} />
-      <Form selectedPrize={selectedPrize} />
+      <div className="wrapperComponents">
+        <Roulette onResultChange={handleResultChange} />
+        <Form selectedPrize={selectedPrize} />
+      </div>
       <Footer />
     </div>
   );
