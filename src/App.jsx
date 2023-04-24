@@ -14,13 +14,13 @@ function App() {
 
   return (
     <div className="App">
-      <BackgroundAnimation />
-      <Navbar />
+      {/* <BackgroundAnimation />
+      <Navbar /> */}
       <div className="wrapperComponents">
         <Roulette onResultChange={handleResultChange} />
         <Form selectedPrize={selectedPrize} />
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

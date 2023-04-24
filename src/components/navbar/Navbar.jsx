@@ -17,6 +17,7 @@ const Navbar = () => {
             className="telegramLink"
             href="https://t.me/marusyalook"
             target="_blank"
+            rel="noreferrer"
           >
             <img src={telegram} alt="telegram" />
           </a>
@@ -24,6 +25,7 @@ const Navbar = () => {
             className="instagramLink"
             href="https://instagram.com/poooshka?igshid=ZWIzMWE5ZmU3Zg=="
             target="_blank"
+            rel="noreferrer"
           >
             <img src={instagram} alt="instagram" />
           </a>

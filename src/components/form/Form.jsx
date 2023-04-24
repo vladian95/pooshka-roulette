@@ -1,32 +1,33 @@
+import Modal from 'react-modal';
 import React, { useState } from 'react';
 import axios from 'axios';
 import ConfettiComponent from '../ConfettiComponent';
-import Modal from 'react-modal';
+
 import './form.scss';
 
 const Form = ({ selectedPrize }) => {
   const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [success, setSuccess] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     const TOKEN = '6061856841:AAF4o0WXDcFWUc3J9b3Cybs4-X8UMBC6E8E';
     const CHAT_ID = '-1001546830288';
     const URL_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
-
     let message = `<b>Запись клиента</b>\n`;
     message += `Имя: ${name}\n`;
-    message += `Email: ${email}\n`;
+    message += `Телефон: ${phone}\n`;
     message += `Выбранный приз: ${selectedPrize}\n`;
 
     try {
       const response = await axios.post(URL_API, {
         chat_id: CHAT_ID,
         text: message,
-        parse_model: 'HTML',
+        parse_mode: 'HTML',
       });
 
       if (response.status === 200) {
@@ -43,8 +44,8 @@ const Form = ({ selectedPrize }) => {
     setName(e.target.value);
   };
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
+  const handlePhoneChange = (e) => {
+    setPhone(e.target.value);
   };
 
   const closeModal = () => {
@@ -62,7 +63,7 @@ const Form = ({ selectedPrize }) => {
             </label>
             <RoulettePrizeInput
               className="inputPrize"
-              value={selectedPrize}
+              value={selectedPrize || ''}
               onChange={() => {}}
             />
           </div>
@@ -72,21 +73,21 @@ const Form = ({ selectedPrize }) => {
               required="required"
               id="name"
               className="inputFrom"
-              value={name}
+              value={name || ''}
               onChange={handleNameChange}
             />
             <span className="inputLabel">Ваше имя:</span>
           </div>
           <div className="inputBox">
             <input
-              type="email"
+              type="tel"
               required="required"
-              id="email"
+              id="phone"
               className="inputFrom"
-              value={email}
-              onChange={handleEmailChange}
+              value={phone || ''}
+              onChange={handlePhoneChange}
             />
-            <span className="inputLabel">Ваш email:</span>
+            <span className="inputLabel">Ваш телефон:</span>
           </div>
 
           <button className="formBtn" type="submit">
