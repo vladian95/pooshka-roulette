@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/pooshka-roulette/static/css/main.8c161824.css",
+    "main.css": "/pooshka-roulette/static/css/main.43d5b398.css",
     "main.js": "/pooshka-roulette/static/js/main.f0d1c85d.js",
     "static/media/NeutralFace.otf": "/pooshka-roulette/static/media/NeutralFace.0d9305e349e0e3613037.otf",
     "static/media/instagramMar.svg": "/pooshka-roulette/static/media/instagramMar.ab008588aaf54b8c4a1941354de66127.svg",
@@ -9,11 +9,11 @@
     "index.html": "/pooshka-roulette/index.html",
     "static/media/linkedin.svg": "/pooshka-roulette/static/media/linkedin.f3d9868e37fc531352427382571a0d5c.svg",
     "static/media/mail.svg": "/pooshka-roulette/static/media/mail.2104d38b68177072b49bdfed3138c83f.svg",
-    "main.8c161824.css.map": "/pooshka-roulette/static/css/main.8c161824.css.map",
+    "main.43d5b398.css.map": "/pooshka-roulette/static/css/main.43d5b398.css.map",
     "main.f0d1c85d.js.map": "/pooshka-roulette/static/js/main.f0d1c85d.js.map"
   },
   "entrypoints": [
-    "static/css/main.8c161824.css",
+    "static/css/main.43d5b398.css",
     "static/js/main.f0d1c85d.js"
   ]
 }
