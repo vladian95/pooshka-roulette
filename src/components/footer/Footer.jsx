@@ -1,18 +1,109 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './footer.scss';
 import telegram from '../../assets/telegramMar.svg';
 import mail from '../../assets/mail.svg';
 import github from '../../assets/github.svg';
 import linkedin from '../../assets/linkedin.svg';
+import { gsap, Power3 } from 'gsap';
 
 const Footer = () => {
+  const footerTelegram = useRef(null);
+  const footerMail = useRef(null);
+  const footerGithub = useRef(null);
+  const footerLinkedin = useRef(null);
+  const footerContent = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      footerTelegram.current,
+      {
+        duration: 1,
+        opacity: 0,
+        y: 40,
+        ease: Power3.easeOut,
+      },
+      {
+        duration: 0.8,
+        opacity: 1,
+        y: 0,
+        ease: Power3.easeOut,
+      }
+    );
+    gsap.fromTo(
+      footerMail.current,
+      {
+        duration: 1,
+        opacity: 0,
+        y: 40,
+        ease: Power3.easeOut,
+      },
+      {
+        duration: 0.8,
+        opacity: 1,
+        y: 0,
+        ease: Power3.easeOut,
+        delay: 0.2,
+      }
+    );
+    gsap.fromTo(
+      footerGithub.current,
+      {
+        duration: 1,
+        opacity: 0,
+        y: 40,
+        ease: Power3.easeOut,
+      },
+      {
+        duration: 0.8,
+        opacity: 1,
+        y: 0,
+        ease: Power3.easeOut,
+        delay: 0.4,
+      }
+    );
+    gsap.fromTo(
+      footerLinkedin.current,
+      {
+        duration: 1,
+        opacity: 0,
+        y: 40,
+        ease: Power3.easeOut,
+      },
+      {
+        duration: 0.8,
+        opacity: 1,
+        y: 0,
+        ease: Power3.easeOut,
+        delay: 0.6,
+      }
+    );
+
+    gsap.fromTo(
+      footerContent.current,
+      {
+        duration: 1,
+        opacity: 0,
+        y: 200,
+        ease: Power3.easeOut,
+      },
+      {
+        duration: 0.8,
+        opacity: 1,
+        y: 0,
+        ease: Power3.easeOut,
+      }
+    );
+  }, []);
+
   return (
     <footer>
       <ul className="wrapperIcon">
         <li className="icon telegram">
           <span class="tooltip">Telegram</span>
           <a href="https://t.me/vladian95" target="_blank" rel="noreferrer">
-            <img src={telegram} alt="telegram" />
+            <div ref={footerTelegram}>
+              <img src={telegram} alt="telegram" />
+            </div>
           </a>
         </li>
         <li className="icon mail">
@@ -22,7 +113,9 @@ const Footer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <img src={mail} alt="Gmail" />
+            <div ref={footerMail}>
+              <img src={mail} alt="Gmail" />
+            </div>
           </a>
         </li>
         <li className="icon github">
@@ -32,7 +125,9 @@ const Footer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <img src={github} alt="github" />
+            <div ref={footerGithub}>
+              <img src={github} alt="github" />
+            </div>
           </a>
         </li>
         <li className="icon linkedin">
@@ -42,24 +137,25 @@ const Footer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <img src={linkedin} alt="linkedin" />
+            <div ref={footerLinkedin}>
+              <img src={linkedin} alt="linkedin" />
+            </div>
           </a>
         </li>
       </ul>
-      <h1 className="footerText">
-        Developed by{' '}
-        <a
-          href="https://vladian95.github.io/port3d/"
-          className="vldn95"
-          target="_blank"
-          rel="noreferrer"
-        >
-          vladian95
-          <svg viewBox="0 0 70 36">
-            <path d="M6.9739 30.8153H63.0244C65.5269 30.8152 75.5358 -3.68471 35.4998 2.81531C-16.1598 11.2025 0.894099 33.9766 26.9922 34.3153C104.062 35.3153 54.5169 -6.68469 23.489 9.31527" />
-          </svg>
-        </a>
-      </h1>
+      <div className="footerWrap">
+        <h1 className="footerText" ref={footerContent}>
+          Developed by{' '}
+          <a
+            href="https://vladian95.github.io/port3d/"
+            className="vldn95"
+            target="_blank"
+            rel="noreferrer"
+          >
+            vladian95
+          </a>
+        </h1>
+      </div>
     </footer>
   );
 };

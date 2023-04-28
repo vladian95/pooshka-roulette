@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'NeutralFace';
+  src: url('../../../public/NeutralFace.otf') format('opentype');
+}
+
 .navbarWrapper {
   display: flex;
   justify-content: space-between;
@@ -6,9 +11,13 @@
   padding: 0px 15px;
 }
 
+.logo {
+  overflow: hidden;
+}
+
 .logoText {
-  font-family: 'Sedgwick Ave Display', cursive;
-  font-size: 45px;
+  font-family: 'NeutralFace' sans-serif;
+  font-size: 2.1rem;
   color: #fff;
   transition: all 0.5s ease-out;
   cursor: pointer;
@@ -16,19 +25,21 @@
   -khtml-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+
   &:hover {
     letter-spacing: 5px;
   }
 }
 
 .navbarSocial {
+  display: flex;
   a {
     img {
       width: 35px;
       height: 35px;
       transition: all 0.5s ease-in-out;
       &:hover {
-        transform: scale(1.5);
+        transform: scale(1.4);
       }
     }
     & + a {

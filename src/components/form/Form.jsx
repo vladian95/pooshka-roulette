@@ -15,8 +15,8 @@ const Form = ({ selectedPrize }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const TOKEN = '6061856841:AAF4o0WXDcFWUc3J9b3Cybs4-X8UMBC6E8E';
-    const CHAT_ID = '-1001546830288';
+    const TOKEN = process.env.REACT_APP_TOKEN;
+    const CHAT_ID = process.env.REACT_APP_CHAT_ID;
     const URL_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
     let message = `<b>Запись клиента</b>\n`;
     message += `Имя: ${name}\n`;
@@ -108,6 +108,7 @@ const Form = ({ selectedPrize }) => {
               content: {
                 display: 'flex',
                 flexDirection: 'column',
+                textAlign: 'center',
                 justifyContent: 'center',
                 alignItems: 'center',
                 backgroundColor: 'rgba(255, 255, 255, 0.8)',
