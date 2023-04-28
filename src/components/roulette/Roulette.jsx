@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Wheel } from 'react-custom-roulette';
+import confetti from 'canvas-confetti';
 import './roulette.scss';
 
 const data = [
-  { option: 'Гель' },
+  { option: '5%' },
   { option: '50%' },
   { option: '30%' },
   { option: '20%' },
@@ -14,6 +15,13 @@ const data = [
 const Roulette = ({ onResultChange }) => {
   const [mustSpin, setMustSpin] = useState(false);
   const [prizeNumber, setPrizeNumber] = useState(0);
+
+  const onClickConfetti = () => {
+    confetti({
+      particleCount: 400,
+      spread: 200,
+    });
+  };
 
   const handleSpinClick = () => {
     if (!mustSpin) {
@@ -45,7 +53,13 @@ const Roulette = ({ onResultChange }) => {
         outerBorderColor={['lightgray']}
         outerSize={1000}
       />
-      <button className="rouletteBtn" onClick={handleSpinClick}>
+      <button
+        className="rouletteBtn"
+        onClick={() => {
+          handleSpinClick();
+          onClickConfetti();
+        }}
+      >
         START
         <div className="wave"></div>
       </button>
